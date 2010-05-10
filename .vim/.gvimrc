@@ -5,7 +5,9 @@
 :hi incsearch ctermbg=216 ctermfg=242
 
 "Transparenz
-set transparency=1
+if has("gui_macvim")
+	set transparency = 1
+endif
 
 "Toolbar ausschalten
 set guioptions-=T
@@ -23,7 +25,11 @@ hi cursorline guibg=#282828
 "hi CursorColumn guibg=#333333
 
 "Schriftart
-set guifont=DejaVu\ Sans\ Mono:h10
+if has("gui_macvim")
+	set guifont=DejaVu\ Sans\ Mono:h10
+else
+	set guifont=DejaVu\ Sans\ Mono\ 8
+endif
 
 "Tabs immer anzeigen
 set showtabline=2
