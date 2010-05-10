@@ -1,0 +1,20 @@
+[github]
+	user = Crazor
+	token = ccb7b0e576c28f858fb9b18d82397311
+[user]
+	name = Crazor
+	email = crazor@gmail.com
+[advice]
+	statusHints = false
+[color]
+	ui = auto
+[alias]
+	st = status -uno
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	lg = log -p
+	who = shortlog -s --
+[instaweb]
+	local = true
