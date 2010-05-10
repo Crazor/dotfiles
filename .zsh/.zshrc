@@ -162,7 +162,7 @@ fi
 ls()
 {
 	local ls
-	if [[ -n $LS_COLORS ]]; then
+	if [[ "$(uname)" == "Linux" ]]; then
 		ls=(ls --color=auto)
 	else
 		ls=(ls -G)
