@@ -170,3 +170,8 @@ ls()
 	command $ls $*
 }
 
+mkcd ()
+{
+	mkdir -p "$*"
+	cd "$*"
+}
