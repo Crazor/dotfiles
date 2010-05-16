@@ -31,3 +31,5 @@
 
 [instaweb]
 	local = true
+[rerere]
+	enabled = 1
