@@ -20,6 +20,7 @@
 	llog = log --date=local
 	changes = diff --name-status -r
 	diffstat = diff --stat -r
+	unadd = reset HEAD
 
 	gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
 	serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
