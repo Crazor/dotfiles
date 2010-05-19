@@ -6,7 +6,7 @@
 
 "Transparenz
 if has("gui_macvim")
-	set transparency = 1
+	set transparency=1
 endif
 
 "Toolbar ausschalten
