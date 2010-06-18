@@ -1,0 +1,3 @@
+if [[ -z `pmset -g ps|grep AC` ]]; then
+	~/bin/brightness 0.0625
+fi
