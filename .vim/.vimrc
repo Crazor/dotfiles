@@ -10,6 +10,9 @@ set helplang=de
 "Maus immer an
 set mouse=a
 
+"Leader
+let mapleader = ","
+
 "Dunklen Hintergrund verwenden
 "set background=dark
 

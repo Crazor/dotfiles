@@ -8,6 +8,9 @@ fi
 if [[ -d /opt/local/sbin ]]; then
 	path=(/opt/local/sbin $path)
 fi
+if [[ -d ~/.gem/ruby/1.8/bin ]]; then
+	path=(~/.gem/ruby/1.8/bin $path)
+fi
 if [[ -d ~/bin ]]; then
 	path=(~/bin $path)
 fi

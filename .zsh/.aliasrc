@@ -1,3 +1,20 @@
 if [[ -f "/Applications/MacVim.app/Contents/MacOS/Vim" ]] ; then
 	alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 fi
+
+if [[ -d "/Applications/Preview.app" ]] ; then
+	pman () {
+		man -t "${1}" | open -f -a /Applications/Preview.app
+	}
+fi
+
+if [[ "`uname`" == "Darwin" ]]; then
+	quit ()
+	{
+		for app in $*; do
+			osascript -e 'quit app "'$app'"';
+		done
+	}
+fi
+
+alias grep="grep --color=auto"
