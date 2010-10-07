@@ -36,3 +36,4 @@
 	enabled = 1
 [core]
 	excludesfile = /Users/crazor/.gitignore
+	autocrlf = input
