@@ -1,3 +1,12 @@
+"Pathogen (http://github.com/tpope/vim-pathogen)
+" Lädt bundles
+filetype off
+call pathogen#runtime_append_all_bundles('bundles')
+call pathogen#helptags()
+
+"Dateityperkennung
+filetype plugin indent on
+
 "Nicht VI-kompatibel sein (wozu auch?)
 set nocompatible
 
@@ -28,9 +37,6 @@ autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
   \ endif
-
-"Dateityperkennung
-filetype plugin indent on
 
 "Syntax Highlighting
 syntax enable
