@@ -28,3 +28,6 @@
 [submodule ".vim/bundles/nerdcommenter"]
 	path = .vim/bundles/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule ".vim/bundles/unmatchedbrackets"]
+	path = .vim/bundles/unmatchedbrackets
+	url = https://github.com/vim-scripts/Highlight-UnMatched-Brackets.git
