@@ -22,3 +22,6 @@
 [submodule ".vim/bundles/cd"]
 	path = .vim/bundles/cd
 	url = https://github.com/vim-scripts/CD.vim.git
+[submodule ".vim/bundles/doxygentoolkit"]
+	path = .vim/bundles/doxygentoolkit
+	url = http://github.com/vim-scripts/DoxygenToolkit.vim.git
