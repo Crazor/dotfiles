@@ -31,3 +31,6 @@
 [submodule ".vim/bundles/unmatchedbrackets"]
 	path = .vim/bundles/unmatchedbrackets
 	url = https://github.com/vim-scripts/Highlight-UnMatched-Brackets.git
+[submodule ".vim/bundles/zoomwin"]
+	path = .vim/bundles/zoomwin
+	url = https://github.com/vim-scripts/ZoomWin.git
