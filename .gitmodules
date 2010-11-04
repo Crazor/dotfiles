@@ -25,3 +25,6 @@
 [submodule ".vim/bundles/doxygentoolkit"]
 	path = .vim/bundles/doxygentoolkit
 	url = http://github.com/vim-scripts/DoxygenToolkit.vim.git
+[submodule ".vim/bundles/nerdcommenter"]
+	path = .vim/bundles/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
