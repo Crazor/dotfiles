@@ -19,3 +19,6 @@
 [submodule ".vim/bundles/vhdl-indent"]
 	path = .vim/bundles/vhdl-indent
 	url = https://github.com/vim-scripts/VHDL-indent-93-syntax.git
+[submodule ".vim/bundles/cd"]
+	path = .vim/bundles/cd
+	url = https://github.com/vim-scripts/CD.vim.git
