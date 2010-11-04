@@ -21,7 +21,7 @@
 	url = https://github.com/vim-scripts/VHDL-indent-93-syntax.git
 [submodule ".vim/bundles/cd"]
 	path = .vim/bundles/cd
-	url = https://github.com/vim-scripts/CD.vim.git
+	url = git@github.com:Crazor/CD.vim.git
 [submodule ".vim/bundles/doxygentoolkit"]
 	path = .vim/bundles/doxygentoolkit
 	url = http://github.com/vim-scripts/DoxygenToolkit.vim.git
