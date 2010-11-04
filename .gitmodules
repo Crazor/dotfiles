@@ -16,3 +16,6 @@
 [submodule ".vim/bundles/objc-matchbracket"]
 	path = .vim/bundles/objc-matchbracket
 	url = https://github.com/vim-scripts/Match-Bracket-for-Objective-C.git
+[submodule ".vim/bundles/vhdl-indent"]
+	path = .vim/bundles/vhdl-indent
+	url = https://github.com/vim-scripts/VHDL-indent-93-syntax.git
