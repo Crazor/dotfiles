@@ -10,3 +10,6 @@
 [submodule ".vim/bundles/cocoa"]
 	path = .vim/bundles/cocoa
 	url = https://github.com/msanders/cocoa.vim.git
+[submodule ".vim/bundles/zenburn"]
+	path = .vim/bundles/zenburn
+	url = https://github.com/vim-scripts/Zenburn.git
