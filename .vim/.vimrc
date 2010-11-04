@@ -226,3 +226,8 @@ endfunction
 
 "Wer braucht schon den Ex-Mode?
 map Q gq
+
+"Git-Status in Statuszeile
+"Standardwert für statusline fehlt
+"Statusline sollte dann immer angezeigt werden
+"set statusline+='%{fugitive#statusline()}'
