@@ -49,3 +49,6 @@
 [submodule ".vim/bundles/xptemplate"]
 	path = .vim/bundles/xptemplate
 	url = https://github.com/vim-scripts/xptemplate.git
+[submodule ".vim/bundles/visincr"]
+	path = .vim/bundles/visincr
+	url = https://github.com/vim-scripts/VisIncr.git
