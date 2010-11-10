@@ -52,3 +52,6 @@
 [submodule ".vim/bundles/visincr"]
 	path = .vim/bundles/visincr
 	url = https://github.com/vim-scripts/VisIncr.git
+[submodule ".vim/bundles/surround"]
+	path = .vim/bundles/surround
+	url = https://github.com/tpope/vim-surround.git
