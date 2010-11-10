@@ -246,3 +246,6 @@ nmap <silent> <Leader>ok :FSAbove<cr>
 nmap <silent> <Leader>oK :FSSplitAbove<cr>
 nmap <silent> <Leader>oj :FSBelow<cr>
 nmap <silent> <Leader>oJ :FSSplitBelow<cr>
+
+"xptemplates mappings
+let g:xptemplate_key = '<C-Tab>'
