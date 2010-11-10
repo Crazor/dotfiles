@@ -46,3 +46,6 @@
 [submodule ".vim/bundles/yankring"]
 	path = .vim/bundles/yankring
 	url = https://github.com/vim-scripts/YankRing.vim.git
+[submodule ".vim/bundles/protodef"]
+	path = .vim/bundles/protodef
+	url = https://github.com/ewiplayer/vim-protodef.git

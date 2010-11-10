@@ -231,3 +231,7 @@ map Q gq
 "Standardwert für statusline fehlt
 "Statusline sollte dann immer angezeigt werden
 "set statusline+='%{fugitive#statusline()}'
+
+"Protodef-Einstellungen
+let protodefprotogetter=$VIM.'bundles/protodef/pullproto.pl'
+let disable_protodef_sorting=1
