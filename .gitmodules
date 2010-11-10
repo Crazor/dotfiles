@@ -34,9 +34,6 @@
 [submodule ".vim/bundles/zoomwin"]
 	path = .vim/bundles/zoomwin
 	url = https://github.com/vim-scripts/ZoomWin.git
-[submodule ".vim/bundles/a"]
-	path = .vim/bundles/a
-	url = https://github.com/vim-scripts/a.vim.git
 [submodule ".vim/bundles/camelcasemotion"]
 	path = .vim/bundles/camelcasemotion
 	url = https://github.com/vim-scripts/camelcasemotion.git
@@ -49,3 +46,6 @@
 [submodule ".vim/bundles/protodef"]
 	path = .vim/bundles/protodef
 	url = https://github.com/ewiplayer/vim-protodef.git
+[submodule ".vim/bundles/fswitch"]
+	path = .vim/bundles/fswitch
+	url = https://github.com/ewiplayer/vim-fswitch.git
