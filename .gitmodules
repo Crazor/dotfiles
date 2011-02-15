@@ -58,3 +58,6 @@
 [submodule ".vim/bundles/repeat"]
 	path = .vim/bundles/repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule ".vim/bundles/conque-shell"]
+	path = .vim/bundles/conque-shell
+	url = https://github.com/vim-scripts/Conque-Shell.git
