@@ -22,7 +22,12 @@ colors
 #RPS1='%~'
 
 PROMPT="%(2L.+. )%{$fg_bold[blue]%}%# %{$reset_color%}%B"
-RPROMPT="%b%{$fg_bold[green]%}%~%{$reset_color%}"
+
+if [[ "$SSH_CONNECTION" != "" ]]; then
+	RPROMPT="%b%{$fg_bold[green]%}%m:%~%{$reset_color%}"
+else
+	RPROMPT="%b%{$fg_bold[green]%}%~%{$reset_color%}"
+fi
 
 namedir () { $1=$PWD ;  : ~$1 }
 function title {
