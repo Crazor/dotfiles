@@ -6,3 +6,6 @@ ZDOTDIR=~/.zsh
 if [[ $SHLVL == 1 ]]; then
 	source $ZDOTDIR/.zpath
 fi
+
+export CLICOLOR=1
+#export LSCOLORS=ExFxCxDxBxegedabagacad

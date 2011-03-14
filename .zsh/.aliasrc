@@ -18,3 +18,9 @@ if [[ "`uname`" == "Darwin" ]]; then
 fi
 
 alias grep="grep --color=auto"
+
+mkcd ()
+{
+	mkdir -p "$*"
+	cd "$*"
+}

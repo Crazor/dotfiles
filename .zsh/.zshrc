@@ -152,31 +152,3 @@ if [[ -r ~/.zsh/.aliasrc ]]; then
 	source ~/.zsh/.aliasrc
 fi
 
-#chpwd() {
-#	[[ -t 1 ]] || return
-#	case $TERM in
-#		(sun-cmd)
-#			print -Pn "\e]l%~\e\\"
-#		;;
-#		(*xterm*|rxvt|(dt|k|E)term)
-#			print -Pn "\e]2;%~\a"
-#		;;
-#	esac
-#}
-
-ls()
-{
-	local ls
-	if [[ "$(uname)" == "Linux" ]]; then
-		ls=(ls --color=auto)
-	else
-		ls=(ls -G)
-	fi
-	command $ls $*
-}
-
-mkcd ()
-{
-	mkdir -p "$*"
-	cd "$*"
-}
