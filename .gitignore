@@ -1,0 +1,10 @@
+*
+!.*
+.DS_Store
+.Xauthority
+.bash_history
+.gdb_history
+.history
+.lesshst
+.viminfo
+.xdvirc
