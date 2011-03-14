@@ -38,6 +38,9 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
+"Erlaube Verstecken von nicht gespeicherten Buffern
+set hidden
+
 "Syntax Highlighting
 syntax enable
 
@@ -77,7 +80,7 @@ set showbreak=\ \ \ \ \ \ \ \
 set cpoptions+=n
 
 "list mode schöner machen
-set listchars=tab:>-,trail:-
+set listchars=tab:>-
 
 "Backspace reparieren
 set backspace=indent,eol,start
@@ -249,3 +252,27 @@ nmap <silent> <Leader>oJ :FSSplitBelow<cr>
 
 "xptemplates mappings
 let g:xptemplate_key = '<C-Tab>'
+
+"Synctex
+map <Leader>r :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<.pdf %<CR>
+
+"Whitespaces am Ende einer Zeile anzeigen und löschen
+autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
+autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
+highlight EOLWS ctermbg=red guibg=red
+
+function! <SID>StripTrailingWhitespace()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
+
+"Keine Klammervervollständigung
+let xptemplate_brace_complete=0
