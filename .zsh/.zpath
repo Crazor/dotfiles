@@ -16,8 +16,9 @@ if [[ -d ~/bin ]]; then
 fi
 if [[ -d ~/.homebrew/bin  ]]; then
 	path=(~/.homebrew/bin $path)
-fi
-RUBY_PATH=$(brew --prefix ruby)/bin
-if [[ -d $RUBY_PATH ]]; then
-	path=($RUBY_PATH $path)
+
+	RUBY_PATH=$(brew --prefix ruby)/bin
+	if [[ -d $RUBY_PATH ]]; then
+		path=($RUBY_PATH $path)
+	fi
 fi
