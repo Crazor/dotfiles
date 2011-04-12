@@ -152,3 +152,6 @@ if [[ -r ~/.zsh/.aliasrc ]]; then
 	source ~/.zsh/.aliasrc
 fi
 
+if [[ -r ~/.homebrew/Library/Contributions ]]; then
+	fpath=(~/.homebrew/Library/Contributions $fpath);
+fi
