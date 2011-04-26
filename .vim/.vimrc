@@ -115,10 +115,18 @@ set hlsearch
 "J ein wenig Benehmen beibringen
 :set nojoinspaces
 
-"Git-Status in Statuszeile
-"Standardwert für statusline fehlt
-"Statusline sollte dann immer angezeigt werden
-"set statusline+='%{fugitive#statusline()}'
+"Status in Statuszeile
+if has('statusline')
+  set statusline=%<%f\ 
+  set statusline+=%w%h%m%r 
+  set statusline+=%{fugitive#statusline()}
+  set statusline+=\ [%{&ff}/%Y]  
+  set statusline+=\ [%{getcwd()}]
+  set statusline+=%=%-14.(Line:\ %l\ of\ %L\ [%p%%]\ -\ Col:\ %c%V%)
+endif
+
+"Immer Statuszeile anzeigen
+set laststatus=2
 
 "}}}
 
