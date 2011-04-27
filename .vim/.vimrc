@@ -1,17 +1,44 @@
-"Pathogen {{{
-"(http://github.com/tpope/vim-pathogen)
-" Lädt bundles
+"Vundle {{{
+
+"Nicht VI-kompatibel sein (wozu auch?)
+set nocompatible
+
 filetype off
-call pathogen#runtime_append_all_bundles('bundles')
-call pathogen#helptags()
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+"}}}
+
+"Bundles {{{
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-fugitive'
+Bundle 'msanders/cocoa.vim'
+Bundle 'Zenburn'
+Bundle 'Match-Bracket-for-Objective-C'
+Bundle 'VHDL-indent-93-syntax'
+Bundle 'DoxygenToolkit.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'Highlight-UnMatched-Brackets'
+Bundle 'ZoomWin'
+Bundle 'camelcasemotion'
+Bundle 'taglist.vim'
+Bundle 'YankRing.vim'
+Bundle 'ewiplayer/vim-protodef'
+Bundle 'ewiplayer/vim-fswitch'
+Bundle 'xptemplate'
+Bundle 'VisIncr'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'Conque-Shell'
+Bundle 'sjl/gundo.vim'
+Bundle 'Lokaltog/vim-easymotion'
 "}}}
 
 "Grundlegende Konfiguration {{{
 "Dateityperkennung
 filetype plugin indent on
 
-"Nicht VI-kompatibel sein (wozu auch?)
-set nocompatible
 
 "Keine Warntöne
 set visualbell t_vb=
