@@ -51,12 +51,12 @@ set mouse=a
 
 
 "Farben {{{
-"Dunklen Hintergrund verwenden
-"set background=dark
+Dunklen Hintergrund verwenden
+set background=dark
 
-"set cursorline
-"hi cursorline guibg=#333333
-"hi CursorColumn guibg=#333333
+set cursorline
+hi cursorline guibg=#333333
+hi CursorColumn guibg=#333333
 "}}}
 
 set viminfo+=!
@@ -258,6 +258,9 @@ map <Leader>r :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displ
 cno $h e ~/
 cno $d e ~/Desktop/
 cno $$ e ./
+
+"Als root schreiben
+cmap w!! %!sudo tee % > /dev/null
 
 "}}}
 
