@@ -51,7 +51,7 @@ set mouse=a
 
 
 "Farben {{{
-Dunklen Hintergrund verwenden
+"Dunklen Hintergrund verwenden
 set background=dark
 
 set cursorline
