@@ -155,6 +155,9 @@ endif
 "Immer Statuszeile anzeigen
 set laststatus=2
 
+"System-Zwischenablage verwenden
+set clipboard=unnamed
+
 "}}}
 
 "Autocommands {{{
@@ -261,6 +264,19 @@ cno $$ e ./
 
 "Als root schreiben
 cmap w!! %!sudo tee % > /dev/null
+
+"Bracketed paste mode Unterstützung
+if &term =~ "xterm.*"
+    let &t_ti = &t_ti . "\e[?2004h"
+    let &t_te = "\e[?2004l" . &t_te
+    function XTermPasteBegin(ret)
+        set pastetoggle=<Esc>[201~
+        set paste
+        return a:ret
+    endfunction
+    map <expr> <Esc>[200~ XTermPasteBegin("i")
+    imap <expr> <Esc>[200~ XTermPasteBegin("")
+endif
 
 "}}}
 
