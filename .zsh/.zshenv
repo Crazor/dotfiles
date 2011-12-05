@@ -29,3 +29,7 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ]; 
 	update_terminal_cwd
 fi
 
+if [[ "`which most`" != "most not found" ]]; then
+	export PAGER=most
+fi
+
