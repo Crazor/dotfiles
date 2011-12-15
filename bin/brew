@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 if [[ "$1" == "update" ]]; then
-	~/.homebrew/bin/brew rebase
+	~/.homebrew/bin/brew update --rebase
 else
 	~/.homebrew/bin/brew "$@"
 fi
