@@ -1,0 +1,46 @@
+#!/bin/sh
+
+_verbose=$HOMEBREW_VERBOSE
+_git_repo=$(brew --repository)
+
+# some options and simple usage
+case $1 in
+  -h|--help)
+    echo "Usage: brew-rebase [--verbose|-v] [remote] [branch]"
+    echo "  Fetches upstream and rebases HOMEBREW_REPOSITORY ($_git_repo)"
+    echo "  Remote defaults to 'upstream', branch defaults to 'master'"
+    exit 0;;
+  -v|--verbose)
+    _verbose="yes"
+    shift
+    ;;    
+esac
+
+# move into HOMEBREW_REPOSITORY
+cd $_git_repo
+
+# get git binary
+_git_bin=$(/usr/bin/which git | head -1)
+
+# additional git args if verbose
+_git_args=
+[ -n "$_verbose" ] && _git_args="--verbose"
+
+# get git remote, defaults to "upstream"
+_remote=$1
+[ ${_remote}"-none" == "-none" ] && _remote="upstream"
+
+# get branch, defaults to "master"
+_branch=$2
+[ ${_branch}"-none" == "-none" ] && _branch="master"
+
+# if remote not added, add remote
+if [ $($_git_bin remote | grep "$_remote")"-notadded" == "-notadded" ]; then
+  echo "[brew-rebase]: adding git://github.com/mxcl/homebrew.git as $_git_remote"
+  $_git_bin remote add "$_remote" "git://github.com/mxcl/homebrew.git"
+fi
+
+# fetch & rebase from $_remote/$_branch
+echo "[brew-rebase] fetch and rebasing homebrew ($_git_repo) => $_remote/$_branch"
+$_git_bin fetch $_git_args "$_remote"
+$_git_bin rebase $_git_args "$_remote/$_branch"

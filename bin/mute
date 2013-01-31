@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Install: sudo defaults write com.apple.loginwindow LogoutHook /Users/crazor/bin/mute
+
+osascript -e "set volume output muted 1"

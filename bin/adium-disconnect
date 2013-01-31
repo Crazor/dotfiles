@@ -1,0 +1,8 @@
+#!/usr/bin/osascript
+tell application "Adium"
+	repeat with a in (every account)
+		if enabled of a is true
+			go offline a
+		end if
+	end repeat
+end tell

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#
+# kextcompare
+#
+# Compares Kernel Extensions in two Extension dirs
+# Compares only the binary, not the plists etc.
+#
+# Written 20080513 by Crazor
+#
+
+# Change this
+KEXTDIR1="/System/Library/Extensions"
+KEXTDIR2="/Volumes/Mac OS X Install DVD/System/Library/Extensions"
+
+# Probably change as needed
+KEXTLIST1=/tmp/kextlist1
+KEXTLIST2=/tmp/kextlist2
+
+### do not change below ###
+
+# Note that grep "MacOS/" is not perfect for matching the binaries, should have used a test, but this would destroy the beauty of pipes. So ignore errors
+cd "${KEXTDIR1}"
+find .| grep ".kext/Contents/MacOS/" | xargs -I X md5 "X" | sed 's/(//g' | sed 's/)//g' | awk '{printf "%s %s\n", $2, $4}' | sed 's$[a-zA-Z0-9._ -]*/$$g' | sort > ${KEXTLIST1} 2>/dev/null
+echo "${KEXTDIR1}" >> ${KEXTLIST1}
+
+cd "${KEXTDIR2}"
+find .| grep ".kext/Contents/MacOS/" | xargs -I X md5 "X" | sed 's/(//g' | sed 's/)//g' | awk '{printf "%s %s\n", $2, $4}' | sed 's$[a-zA-Z0-9._ -]*/$$g' | sort > ${KEXTLIST2} 2>/dev/null
+echo "${KEXTDIR2}" >> ${KEXTLIST2}
+
+
+diff -y --suppress-common-lines ${KEXTLIST1} ${KEXTLIST2}
+
+rm "${KEXTLIST1}" "${KEXTLIST2}"
