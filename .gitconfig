@@ -29,6 +29,14 @@
 	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
 	edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; mvim `f`"
 	add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
 
 [instaweb]
 	local = true
