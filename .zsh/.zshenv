@@ -33,3 +33,5 @@ if [[ "`which most`" != "most not found" ]]; then
 	export PAGER=most
 fi
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

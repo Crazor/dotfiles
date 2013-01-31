@@ -148,6 +148,10 @@ zstyle ':completion:*' group-name ''
 # Colorize completion lists
 zstyle ':completion:*' list-colors ''
 
+# Report time after long execution
+export REPORTTIME=5
+export TIMEFMT="%U user %S system %P cpu %*Es total"
+
 if [[ -r ~/.zsh/.aliasrc ]]; then
 	source ~/.zsh/.aliasrc
 fi
@@ -155,3 +159,18 @@ fi
 if [[ -r ~/.homebrew/Library/Contributions ]]; then
 	fpath=(~/.homebrew/Library/Contributions $fpath);
 fi
+
+[[ -s "/Users/crazor/.rvm/scripts/rvm" ]] && source "/Users/crazor/.rvm/scripts/rvm"
+
+man() {
+	env \
+		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+		LESS_TERMCAP_md=$(printf "\e[1;31m") \
+		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_se=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+		LESS_TERMCAP_ue=$(printf "\e[0m") \
+		LESS_TERMCAP_us=$(printf "\e[1;32m") \
+			man "$@"
+}
+
