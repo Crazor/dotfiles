@@ -24,8 +24,8 @@ Bundle 'ZoomWin'
 Bundle 'camelcasemotion'
 Bundle 'taglist.vim'
 Bundle 'YankRing.vim'
-Bundle 'ewiplayer/vim-protodef'
-Bundle 'ewiplayer/vim-fswitch'
+Bundle 'derekwyatt/vim-protodef'
+Bundle 'derekwyatt/vim-fswitch'
 Bundle 'xptemplate'
 Bundle 'VisIncr'
 Bundle 'tpope/vim-surround'
@@ -33,6 +33,11 @@ Bundle 'tpope/vim-repeat'
 Bundle 'Conque-Shell'
 Bundle 'sjl/gundo.vim'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'altercation/vim-colors-solarized'
+syntax enable
+set background=light
+colorscheme solarized
+set cursorline
 "}}}
 
 "Grundlegende Konfiguration {{{
@@ -49,15 +54,6 @@ set helplang=de
 "Maus immer an
 set mouse=a
 
-
-"Farben {{{
-"Dunklen Hintergrund verwenden
-set background=dark
-
-set cursorline
-hi cursorline guibg=#333333
-hi CursorColumn guibg=#333333
-"}}}
 
 set viminfo+=!
 set viminfo+=n~/.vim/.viminfo
