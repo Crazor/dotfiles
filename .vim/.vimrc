@@ -40,6 +40,8 @@ colorscheme solarized
 set cursorline
 "}}}
 
+python from powerline.bindings.vim import source_plugin; source_plugin()
+
 "Grundlegende Konfiguration {{{
 "Dateityperkennung
 filetype plugin indent on
@@ -137,16 +139,6 @@ set hlsearch
 
 "J ein wenig Benehmen beibringen
 :set nojoinspaces
-
-"Status in Statuszeile
-if has('statusline')
-  set statusline=%<%f\ 
-  set statusline+=%w%h%m%r 
-  set statusline+=%{fugitive#statusline()}
-  set statusline+=\ [%{&ff}/%Y]  
-  set statusline+=\ [%{getcwd()}]
-  set statusline+=%=%-14.(Line:\ %l\ of\ %L\ [%p%%]\ -\ Col:\ %c%V%)
-endif
 
 "Immer Statuszeile anzeigen
 set laststatus=2
