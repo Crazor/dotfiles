@@ -156,9 +156,8 @@ if [[ -r ~/.zsh/.aliasrc ]]; then
 	source ~/.zsh/.aliasrc
 fi
 
-if [[ -r ~/.homebrew/Library/Contributions ]]; then
-	fpath=(~/.homebrew/Library/Contributions $fpath);
-fi
+fpath=($HOME/.zsh/func $fpath)
+typeset -U fpath
 
 [[ -s "/Users/crazor/.rvm/scripts/rvm" ]] && source "/Users/crazor/.rvm/scripts/rvm"
 
