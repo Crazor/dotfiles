@@ -2,7 +2,7 @@
 ZDOTDIR=.zsh
 
 # Note that setting $EDITOR to vim also causes zsh to use vi-like keymaps
-export EDITOR=vim
+#export EDITOR=vim
 
 # Most does colorful manpages, among others
 #export PAGER=most
