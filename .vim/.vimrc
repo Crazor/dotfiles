@@ -34,6 +34,7 @@ Bundle 'Conque-Shell'
 Bundle 'sjl/gundo.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'jistr/vim-nerdtree-tabs'
 syntax enable
 set background=light
 colorscheme solarized
@@ -145,6 +146,10 @@ set laststatus=2
 
 "System-Zwischenablage verwenden
 set clipboard=unnamed
+
+"Persistant Undo
+set undodir=~/.vim/undo
+set undofile
 
 "}}}
 
