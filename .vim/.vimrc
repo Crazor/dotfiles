@@ -271,6 +271,13 @@ if &term =~ "xterm.*"
     imap <expr> <Esc>[200~ XTermPasteBegin("")
 endif
 
+"Jetzt wird endlich hjkl gelernt!
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+
 "}}}
 
 "Plugins {{{
