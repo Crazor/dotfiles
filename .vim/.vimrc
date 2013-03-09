@@ -35,13 +35,14 @@ Bundle 'sjl/gundo.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'Lokaltog/powerline'
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
 syntax enable
 set background=light
 colorscheme solarized
 set cursorline
 "}}}
-
-python from powerline.bindings.vim import source_plugin; source_plugin()
 
 "Grundlegende Konfiguration {{{
 "Dateityperkennung
@@ -262,7 +263,7 @@ cmap w!! %!sudo tee % > /dev/null
 if &term =~ "xterm.*"
     let &t_ti = &t_ti . "\e[?2004h"
     let &t_te = "\e[?2004l" . &t_te
-    function XTermPasteBegin(ret)
+    function! XTermPasteBegin(ret)
         set pastetoggle=<Esc>[201~
         set paste
         return a:ret
