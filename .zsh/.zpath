@@ -2,17 +2,6 @@
 # Make path's entries unique
 typeset -U path
 
-if [[ -d ~/.homebrew/bin  ]]; then
-	path=(~/.homebrew/bin ~/.homebrew/sbin $path)
-
-	RUBY_PATH=$(brew --prefix ruby)/bin
-	if [[ -d $RUBY_PATH ]]; then
-		path=($RUBY_PATH $path)
-	fi
-fi
-if [[ -d ~/.homebrew/Library/Contributions/examples ]]; then
-	path=(~/.homebrew/Library/Contributions/examples $path)
-fi
 if [[ -d ~/bin ]]; then
 	path=(~/bin $path)
 fi
