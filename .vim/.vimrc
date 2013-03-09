@@ -35,6 +35,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'Lokaltog/powerline'
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
@@ -140,7 +141,7 @@ set incsearch
 set hlsearch
 
 "J ein wenig Benehmen beibringen
-:set nojoinspaces
+set nojoinspaces
 
 "Immer Statuszeile anzeigen
 set laststatus=2
@@ -149,6 +150,7 @@ set laststatus=2
 set clipboard=unnamed
 
 "Persistant Undo
+silent !mkdir -p ~/.vim/undo
 set undodir=~/.vim/undo
 set undofile
 
