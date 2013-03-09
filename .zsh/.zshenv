@@ -35,5 +35,3 @@ fi
 
 export PAGER=vimpager
 export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a iTerm"'
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

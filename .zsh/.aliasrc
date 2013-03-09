@@ -29,4 +29,5 @@ alias dotfiles="git --git-dir=$HOME/.dotfiles.git"
 
 alias psgrep="psgrep -a -i -o pid,state,user,command"
 
-alias less=$PAGER
+alias less=vimpager
+alias zless=vimpager
