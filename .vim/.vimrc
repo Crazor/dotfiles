@@ -26,7 +26,6 @@ Bundle 'taglist.vim'
 Bundle 'YankRing.vim'
 Bundle 'derekwyatt/vim-protodef'
 Bundle 'derekwyatt/vim-fswitch'
-Bundle 'xptemplate'
 Bundle 'VisIncr'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
@@ -189,7 +188,7 @@ function! <SID>StripTrailingWhitespace()
     let @/=_s
     call cursor(l, c)
 endfunction
-nmap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
+nnoremap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
 "}}}
 
 "MacVim {{{
@@ -213,24 +212,24 @@ endfunction
 "Leader
 let mapleader = ","
 "fswitch mappings
-nmap <silent> <Leader>of :FSHere<cr>
-nmap <silent> <Leader>ol :FSRight<cr>
-nmap <silent> <Leader>oL :FSSplitRight<cr>
-nmap <silent> <Leader>oh :FSLeft<cr>
-nmap <silent> <Leader>oH :FSSplitLeft<cr>
-nmap <silent> <Leader>ok :FSAbove<cr>
-nmap <silent> <Leader>oK :FSSplitAbove<cr>
-nmap <silent> <Leader>oj :FSBelow<cr>
-nmap <silent> <Leader>oJ :FSSplitBelow<cr>
+nnoremap <silent> <Leader>of :FSHere<cr>
+nnoremap <silent> <Leader>ol :FSRight<cr>
+nnoremap <silent> <Leader>oL :FSSplitRight<cr>
+nnoremap <silent> <Leader>oh :FSLeft<cr>
+nnoremap <silent> <Leader>oH :FSSplitLeft<cr>
+nnoremap <silent> <Leader>ok :FSAbove<cr>
+nnoremap <silent> <Leader>oK :FSSplitAbove<cr>
+nnoremap <silent> <Leader>oj :FSBelow<cr>
+nnoremap <silent> <Leader>oJ :FSSplitBelow<cr>
 
 function! Texmap()
-	imap ö "o
-	imap ä "a
-	imap ü "u
-	imap Ä "A
-	imap Ö "O
-	imap Ü "U
-	imap ß "s
+	inoremap ö "o
+	inoremap ä "a
+	inoremap ü "u
+	inoremap Ä "A
+	inoremap Ö "O
+	inoremap Ü "U
+	inoremap ß "s
 endfunction
 
 function! Untexmap()
@@ -246,21 +245,21 @@ endfunction
 :command! Untex call Untexmap()
 
 "Wer braucht schon den Ex-Mode?
-map Q gq
+noremap Q gq
 
 "xptemplates mappings
 let g:xptemplate_key = '<C-Tab>'
 
 "Synctex
-map <Leader>r :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<.pdf %<CR>
+noremap <Leader>r :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<.pdf %<CR>
 
 "Edit Mappings
-cno $h e ~/
-cno $d e ~/Desktop/
-cno $$ e ./
+cnoremap $h e ~/
+cnoremap $d e ~/Desktop/
+cnoremap $$ e ./
 
 "Als root schreiben
-cmap w!! %!sudo tee % > /dev/null
+cnoremap w!! %!sudo tee % > /dev/null
 
 "Bracketed paste mode Unterstützung
 if &term =~ "xterm.*"
@@ -271,16 +270,29 @@ if &term =~ "xterm.*"
         set paste
         return a:ret
     endfunction
-    map <expr> <Esc>[200~ XTermPasteBegin("i")
-    imap <expr> <Esc>[200~ XTermPasteBegin("")
+    noremap <expr> <Esc>[200~ XTermPasteBegin("i")
+    inoremap <expr> <Esc>[200~ XTermPasteBegin("")
 endif
 
-"Jetzt wird endlich hjkl gelernt!
-noremap <Up> <NOP>
-noremap <Down> <NOP>
+noremap <Up> <C-y>
+noremap <Down> <C-e>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+"Space toggles folds
+nnoremap <Space> za
+
+"Move lines up and down
+noremap <Leader>j ddp
+noremap <Leader>k ddkP
+
+"Kill highlights
+noremap <leader>n :nohl<CR>
+
+""Uppercase word
+"inoremap <C-u> <Esc>viwgUea
+""Lowercase word
+"inoremap <C-l> <Esc>viwguea
 
 "}}}
 
