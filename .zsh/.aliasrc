@@ -31,3 +31,4 @@ alias psgrep="psgrep -a -i -o pid,state,user,command"
 
 alias less=vimpager
 alias zless=vimpager
+alias git=hub
