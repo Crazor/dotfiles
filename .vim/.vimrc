@@ -19,7 +19,7 @@ Bundle 'Match-Bracket-for-Objective-C'
 Bundle 'VHDL-indent-93-syntax'
 Bundle 'DoxygenToolkit.vim'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'Highlight-UnMatched-Brackets'
+"Bundle 'Highlight-UnMatched-Brackets'
 Bundle 'ZoomWin'
 Bundle 'camelcasemotion'
 Bundle 'taglist.vim'
@@ -36,8 +36,10 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'Lokaltog/powerline'
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+"Bundle 'Lokaltog/powerline'
+"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 syntax enable
 set background=light
@@ -280,7 +282,7 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 "Space toggles folds
-nnoremap <Space> za
+"nnoremap <Space> za
 
 "Move lines up and down
 noremap <Leader>j ddp

@@ -1,9 +1,4 @@
-#if [[ -z `pmset -g ps|grep AC` ]]; then
-#	~/bin/brightness 0.0625
-#fi
+if [[ -z `pmset -g ps|grep AC` ]]; then
+	~/bin/brightness 0.0625
+fi
 
-sleep 5
-PV=72D35800-22A8-4A83-8CA7-18BDF0AE0D82
-DEV=$(diskutil cs list $PV|awk '/Disk:/{print substr($2, 0, 5)}')
-diskutil eject HDD
-diskutil eject $DEV
