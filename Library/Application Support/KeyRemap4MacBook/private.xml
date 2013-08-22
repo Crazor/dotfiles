@@ -7,11 +7,12 @@
 		<identifier>private.left_control_to_hyper</identifier>
 
 		<autogen>
-			--KeyToKey--
+			--KeyOverlaidModifier--
 			KeyCode::F19,
 
 			KeyCode::COMMAND_L,
-			ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+			ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+			KeyCode::F19
 		</autogen>
 	</item>
 
