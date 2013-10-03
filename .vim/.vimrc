@@ -14,7 +14,6 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
 Bundle 'msanders/cocoa.vim'
-Bundle 'Zenburn'
 Bundle 'Match-Bracket-for-Objective-C'
 Bundle 'VHDL-indent-93-syntax'
 Bundle 'DoxygenToolkit.vim'
@@ -34,12 +33,12 @@ Bundle 'Conque-Shell'
 Bundle 'sjl/gundo.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'jistr/vim-nerdtree-tabs'
+"Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
-"Bundle 'Lokaltog/powerline'
-"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+Bundle 'Lokaltog/powerline'
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 syntax enable
 set background=light
