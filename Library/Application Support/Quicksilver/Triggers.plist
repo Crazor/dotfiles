@@ -329,6 +329,23 @@
 			<dict>
 				<key>actionID</key>
 				<string>FileOpenAction</string>
+				<key>directArchive</key>
+				<dict>
+					<key>class</key>
+					<string>QSObject</string>
+					<key>data</key>
+					<dict>
+						<key>NSStringPboardType</key>
+						<string>/opt/homebrew-cask/Caskroom/adium/1.5.7/Adium.app</string>
+					</dict>
+					<key>properties</key>
+					<dict>
+						<key>QSObjectName</key>
+						<string>/opt/homebrew-cask/Caskroom/adium/1.5.7/Adium.app</string>
+						<key>QSObjectType</key>
+						<string>NSStringPboardType</string>
+					</dict>
+				</dict>
 				<key>directID</key>
 				<string>/opt/homebrew-cask/Caskroom/adium/1.5.7/Adium.app</string>
 			</dict>
@@ -435,6 +452,23 @@
 			<dict>
 				<key>actionID</key>
 				<string>FileOpenAction</string>
+				<key>directArchive</key>
+				<dict>
+					<key>class</key>
+					<string>QSObject</string>
+					<key>data</key>
+					<dict>
+						<key>NSStringPboardType</key>
+						<string>/opt/homebrew-cask/Caskroom/google-chrome/stable-channel/Google Chrome.app</string>
+					</dict>
+					<key>properties</key>
+					<dict>
+						<key>QSObjectName</key>
+						<string>/opt/homebrew-cask/Caskroom/google-chrome/stable-channel/Google Chrome.app</string>
+						<key>QSObjectType</key>
+						<string>NSStringPboardType</string>
+					</dict>
+				</dict>
 				<key>directID</key>
 				<string>/opt/homebrew-cask/Caskroom/google-chrome/stable-channel/Google Chrome.app</string>
 			</dict>
