@@ -39,6 +39,7 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'Lokaltog/powerline'
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+Bundle 'funprototypes'
 
 syntax enable
 set background=light
@@ -172,6 +173,9 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
+
+"Highlighting
+autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 
 "Whitespaces am Ende einer Zeile anzeigen und löschen
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
