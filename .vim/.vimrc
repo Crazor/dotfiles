@@ -9,37 +9,37 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 "}}}
 
-"Bundles {{{
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-fugitive'
-Bundle 'msanders/cocoa.vim'
-Bundle 'Match-Bracket-for-Objective-C'
-Bundle 'VHDL-indent-93-syntax'
-Bundle 'DoxygenToolkit.vim'
-Bundle 'scrooloose/nerdcommenter'
-"Bundle 'Highlight-UnMatched-Brackets'
-Bundle 'ZoomWin'
-Bundle 'camelcasemotion'
-Bundle 'taglist.vim'
-Bundle 'YankRing.vim'
-Bundle 'derekwyatt/vim-protodef'
-Bundle 'derekwyatt/vim-fswitch'
-Bundle 'VisIncr'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-abolish'
-Bundle 'Conque-Shell'
-Bundle 'sjl/gundo.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'altercation/vim-colors-solarized'
-"Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'Lokaltog/powerline'
+"Plugins {{{
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'msanders/cocoa.vim'
+Plugin 'Match-Bracket-for-Objective-C'
+Plugin 'VHDL-indent-93-syntax'
+Plugin 'DoxygenToolkit.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'ZoomWin'
+Plugin 'camelcasemotion'
+Plugin 'taglist.vim'
+Plugin 'YankRing.vim'
+Plugin 'derekwyatt/vim-protodef'
+Plugin 'derekwyatt/vim-fswitch'
+Plugin 'VisIncr'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-abolish'
+Plugin 'sjl/gundo.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'altercation/vim-colors-solarized'
+"Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'Lokaltog/powerline'
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-Bundle 'funprototypes'
+Plugin 'valloric/YouCompleteMe'
+Plugin 'Raimondi/delimitMate'
+Plugin 'Valloric/ListToggle'
 
 syntax enable
 set background=light
@@ -279,10 +279,10 @@ if &term =~ "xterm.*"
     inoremap <expr> <Esc>[200~ XTermPasteBegin("")
 endif
 
-noremap <Up> <C-y>
-noremap <Down> <C-e>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+"noremap <Up> <C-y>
+"noremap <Down> <C-e>
+"noremap <Left> <NOP>
+"noremap <Right> <NOP>
 
 "Space toggles folds
 "nnoremap <Space> za
