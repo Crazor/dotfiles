@@ -35,4 +35,7 @@ fi
 #fi
 
 export PAGER=vimpager
-export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a iTerm"'
+
+# Seems to be buggy with brew cask:
+#export EDITOR="mvim -f --nomru -c 'au VimLeave * !open -a iTerm'"
+export EDITOR=mvim
