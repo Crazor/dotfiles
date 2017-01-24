@@ -42,7 +42,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/ListToggle'
 
 syntax enable
-set background=light
+"set background=light
 colorscheme solarized
 set cursorline
 "}}}
