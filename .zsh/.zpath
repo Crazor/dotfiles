@@ -1,6 +1,8 @@
 #!/bin/zsh
-# Make path's entries unique
+# Make path entries unique
 typeset -U path
+typeset -U manpath
+typeset -U infopath
 
 if [[ -d /usr/local/share/python ]]; then
 	path=(/usr/local/share/python $path)
@@ -16,6 +18,12 @@ fi
 
 if [[ -d /usr/local/sbin ]]; then
 	path=(/usr/local/sbin $path)
+fi
+
+if [[ -d ~/.linuxbrew ]]; then
+	path=(~/.linuxbrew/bin $path)
+	manpath=(~/.linuxbrew/share/man $manpath)
+	infopath=(~/.linuxbrew/share/info $infopath)
 fi
 
 if [[ -d ~/bin ]]; then
