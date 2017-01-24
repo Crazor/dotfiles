@@ -18,6 +18,11 @@ HISTFILE=~/.history
 autoload -U colors
 colors
 
+# Load solarized dircolors
+if [[ "`uname`" == "Linux" ]]; then
+	eval `dircolors ~/.dir_colors/dircolors`
+fi
+
 #PS1='%(2L.+ .)%# '
 #RPS1='%~'
 
