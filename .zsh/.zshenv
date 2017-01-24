@@ -2,11 +2,7 @@
 # Note: symlink ~/.zshenv to ~/.zsh/.zshenv
 ZDOTDIR=~/.zsh
 
-#Source .zpath only for the toplevel shell, not in spawned subshells
-#if [[ $SHLVL == 1 && ! -o LOGIN ]]; then
-if [[ $SHLVL == 1 ]]; then
-	source $ZDOTDIR/.zpath
-fi
+source $ZDOTDIR/.zpath
 
 export CLICOLOR=1
 #export LSCOLORS=ExFxCxDxBxegedabagacad
