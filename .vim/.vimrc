@@ -40,6 +40,7 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 Plugin 'valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/ListToggle'
+Plugin 'xu-cheng/brew.vim'
 
 syntax enable
 "set background=light
