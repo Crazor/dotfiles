@@ -178,3 +178,9 @@ typeset -U fpath
 #			man "$@"
 #}
 
+# Homebrew recommended:
+if [[ -d /usr/local/share/zsh/help ]]; then
+	unalias run-help
+	autoload run-help
+	HELPDIR=/usr/local/share/zsh/help
+fi
