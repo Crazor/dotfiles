@@ -11,9 +11,9 @@ set lines=25
 
 "Schriftart
 if has("gui_macvim")
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+	set guifont=Hack:h12
 else
-	set guifont=DejaVu\ Sans\ Mono\ 8
+	set guifont=Hack 8
 endif
 
 "Tabs immer anzeigen

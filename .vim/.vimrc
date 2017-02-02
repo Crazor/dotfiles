@@ -52,7 +52,6 @@ set cursorline
 "Dateityperkennung
 filetype plugin indent on
 
-
 "Keine Warntöne
 set visualbell t_vb=
 
@@ -62,10 +61,8 @@ set helplang=de
 "Maus immer an
 set mouse=a
 
-
 set viminfo+=!
 set viminfo+=n~/.vim/.viminfo
-
 
 "Erlaube Verstecken von nicht gespeicherten Buffern
 set hidden
@@ -156,6 +153,9 @@ set clipboard=unnamed
 silent !mkdir -p ~/.vim/undo
 set undodir=~/.vim/undo
 set undofile
+
+"NetRW
+let g:netrw_liststyle=3 "Tree style listing
 
 "}}}
 
