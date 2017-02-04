@@ -41,6 +41,7 @@ Plugin 'valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/ListToggle'
 Plugin 'xu-cheng/brew.vim'
+Plugin 'joonty/vdebug'
 
 syntax enable
 "set background=light
