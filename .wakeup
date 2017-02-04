@@ -1,4 +1,6 @@
 if [[ -z `pmset -g ps|grep AC` ]]; then
-	~/bin/brightness 0.0625
+#	~/bin/brightness 0.0625
 fi
+
+~/bin/fix-jitouch
 
