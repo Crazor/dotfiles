@@ -37,3 +37,4 @@ export PAGER=vimpager
 export EDITOR=mvim
 
 source $ZDOTDIR/zshenv.local
+source $ZDOTDIR/airline-prompt.zsh
