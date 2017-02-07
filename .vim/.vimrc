@@ -35,13 +35,15 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
-Plugin 'Lokaltog/powerline'
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 Plugin 'valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/ListToggle'
 Plugin 'xu-cheng/brew.vim'
 Plugin 'joonty/vdebug'
+Plugin 'vim-airline/vim-airline'
+let g:airline_powerline_fonts = 1
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'edkolev/promptline.vim'
 
 syntax enable
 "set background=light
@@ -92,7 +94,10 @@ set winminwidth=0
 set autoread
 
 "Änderungen an .vimrc beim Speichern übernehmen
-autocmd! bufwritepost .vimrc source ~/.vimrc
+augroup reload_vimrc
+	autocmd!
+	autocmd bufwritepost $MYVIMRC nested source $MYVIMRC
+augroup END
 
 "Zeilennummern
 set number
