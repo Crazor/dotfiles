@@ -24,7 +24,8 @@ if [[ -d ~/.linuxbrew ]]; then
 	path=(~/.linuxbrew/bin $path)
 	manpath=(~/.linuxbrew/share/man $manpath)
 	infopath=(~/.linuxbrew/share/info $infopath)
-	export XDG_DATA_DIRS=~/.linuxbrew/share:$XDG_DATA_DIRS
+	#This is brew doctor's recommendation, but it damages the session:
+	#export XDG_DATA_DIRS=~/.linuxbrew/share:$XDG_DATA_DIRS
 fi
 
 if [[ -d ~/bin ]]; then
