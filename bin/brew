@@ -1,7 +1,13 @@
 #!/bin/zsh
 
+if [[ -a ~/.linuxbrew/bin/brew ]]; then
+	BREW=~/.linuxbrew/bin/brew
+elif [[ -a /usr/local/bin/brew ]]; then
+	BREW=/usr/local/bin/brew
+fi
+
 if [[ "$1" == "update" ]]; then
-	/usr/local/bin/brew update --rebase
+	$BREW update --rebase
 else
-	/usr/local/bin/brew "$@"
+	$BREW "$@"
 fi
