@@ -5,6 +5,12 @@ set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 
+"Keine Menüs
+set guioptions-=m
+
+"Keine GUI-Tabs
+set guioptions-=e
+
 "Standardgröße
 set columns=95
 set lines=25
@@ -13,7 +19,7 @@ set lines=25
 if has("gui_macvim")
 	set guifont=Hack:h12
 else
-	set guifont=Hack 8
+	set guifont=Hack
 endif
 
 "Tabs immer anzeigen

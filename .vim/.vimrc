@@ -44,9 +44,13 @@ Plugin 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 1
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/promptline.vim'
+let g:airline#extensions#tabline#enabled = 1
+
+"let g:solarized_termtrans=1
 
 syntax enable
-"set background=light
+set background=light
+"let g:solarized_termcolors=256
 colorscheme solarized
 set cursorline
 "}}}
@@ -99,8 +103,15 @@ augroup reload_vimrc
 	autocmd bufwritepost $MYVIMRC nested source $MYVIMRC
 augroup END
 
+"Bei :make usw. automatisch speichern
+set autowrite
+
 "Zeilennummern
 set number
+"relative Zeilennummern
+set relativenumber
+" ^ Die Kombination aus 'nu' und 'rnu' zeigt die absolute Zeilennummer in der
+" aktuellen Zeile an
 
 "Cursorposition anzeigen
 set ruler
@@ -127,7 +138,7 @@ set showmatch
 set display=lastline
 
 "Zeilen bis zum Bildschirmrand
-set scrolloff=1
+set scrolloff=3
 
 "Folding
 set foldenable
@@ -286,10 +297,10 @@ if &term =~ "xterm.*"
     inoremap <expr> <Esc>[200~ XTermPasteBegin("")
 endif
 
-"noremap <Up> <C-y>
-"noremap <Down> <C-e>
-"noremap <Left> <NOP>
-"noremap <Right> <NOP>
+noremap <Up> <C-y>
+noremap <Down> <C-e>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 "Space toggles folds
 "nnoremap <Space> za
@@ -305,6 +316,11 @@ noremap <leader>n :nohl<CR>
 "inoremap <C-u> <Esc>viwgUea
 ""Lowercase word
 "inoremap <C-l> <Esc>viwguea
+
+"Tabs wechseln
+noremap <Leader>, gT
+noremap <Leader>. gt
+noremap ., gT
 
 "}}}
 
