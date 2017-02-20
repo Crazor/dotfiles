@@ -20,7 +20,7 @@ colors
 
 # Load solarized dircolors
 if [[ "`uname`" == "Linux" ]]; then
-	eval `dircolors ~/.dir_colors/dircolors`
+	eval `dircolors ~/.zsh/dircolors-solarized.ansi-universal`
 fi
 
 #PS1='%(2L.+ .)%# '
@@ -73,6 +73,9 @@ WORDCHARS='*?[]~=&;!#$%^(){}<>'
 
 # Don't kill background jobs on exit
 setopt NO_HUP
+
+# Don't notify about backgrounded jobs
+setopt NO_CHECK_JOBS
 
 # Allow ${} substitutions in prompt variables
 setopt PROMPT_SUBST
