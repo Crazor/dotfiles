@@ -36,10 +36,14 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'valloric/YouCompleteMe'
+"let g:ycm_server_use_vim_stdout = 1
+"let g:ycm_server_log_level = 'debug'
+Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/ListToggle'
 Plugin 'xu-cheng/brew.vim'
 Plugin 'joonty/vdebug'
+Plugin 'ReplaceWithRegister'
 Plugin 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 1
 Plugin 'vim-airline/vim-airline-themes'
@@ -320,7 +324,6 @@ noremap <leader>n :nohl<CR>
 "Tabs wechseln
 noremap <Leader>, gT
 noremap <Leader>. gt
-noremap ., gT
 
 "}}}
 
