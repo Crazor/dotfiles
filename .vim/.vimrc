@@ -135,6 +135,9 @@ set backspace=indent,eol,start
 "Wrapping für Cursor
 set whichwrap=b,s,<,>,[,]
 
+"Rand für Umbruch
+set colorcolumn=81
+
 "Passende Klammer anzeigen
 set showmatch
 
