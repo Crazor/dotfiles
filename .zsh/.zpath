@@ -4,10 +4,6 @@ typeset -U path
 typeset -U manpath
 typeset -U infopath
 
-if [[ -d /usr/local/share/python ]]; then
-	path=(/usr/local/share/python $path)
-fi
-
 if [[ -d /usr/local/share/npm/bin ]]; then
 	path=(/usr/local/share/npm/bin $path)
 fi
