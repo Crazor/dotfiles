@@ -49,6 +49,8 @@ let g:airline_powerline_fonts = 1
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/promptline.vim'
 let g:airline#extensions#tabline#enabled = 1
+Plugin 'skywind3000/asyncrun.vim'
+Plugin 'keith/tmux.vim'
 
 "let g:solarized_termtrans=1
 
@@ -219,6 +221,18 @@ function! <SID>StripTrailingWhitespace()
     call cursor(l, c)
 endfunction
 nnoremap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
+
+"Hilfe in Tab öffnen
+augroup HelpInTabs
+	autocmd!
+	autocmd BufEnter *.txt call HelpInNewTab()
+augroup END
+
+function! HelpInNewTab()
+	if &buftype == 'help'
+		execute "normal \<C-W>T"
+	endif
+endfunction
 "}}}
 
 "MacVim {{{
@@ -310,7 +324,7 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 "Space toggles folds
-"nnoremap <Space> za
+nnoremap <Space> za
 
 "Move lines up and down
 noremap <Leader>j ddp
