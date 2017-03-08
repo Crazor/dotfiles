@@ -187,6 +187,9 @@ set undofile
 "NetRW
 let g:netrw_liststyle=3 "Tree style listing
 
+"Vimpager
+"let g:vimpager.passthrough=0
+
 "}}}
 
 "Autocommands {{{
