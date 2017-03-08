@@ -51,6 +51,8 @@ let g:airline_powerline_fonts = 1
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/promptline.vim'
 let g:airline#extensions#tabline#enabled = 1
+Plugin 'edkolev/tmuxline.vim'
+let g:airline#extensions#tmuxline#enabled = 1
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'keith/tmux.vim'
 
