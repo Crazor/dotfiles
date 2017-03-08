@@ -23,16 +23,12 @@ if [[ "`uname`" == "Linux" ]]; then
 	eval `dircolors ~/.zsh/dircolors-solarized.ansi-universal`
 fi
 
-#PS1='%(2L.+ .)%# '
-#RPS1='%~'
-
-PROMPT="%(2L.+. )%{$fg_bold[blue]%}%# %{$reset_color%}%B"
-
-if [[ "$SSH_CONNECTION" != "" ]]; then
-	RPROMPT="%b%{$fg_bold[green]%}%m:%~%{$reset_color%}"
-else
-	RPROMPT="%b%{$fg_bold[green]%}%~%{$reset_color%}"
-fi
+#PROMPT="%(2L.+. )%{$fg_bold[blue]%}%# %{$reset_color%}%B"
+#if [[ "$SSH_CONNECTION" != "" ]]; then
+	#RPROMPT="%b%{$fg_bold[green]%}%m:%~%{$reset_color%}"
+#else
+	#RPROMPT="%b%{$fg_bold[green]%}%~%{$reset_color%}"
+#fi
 
 namedir () { $1=$PWD ;  : ~$1 }
 function title {
