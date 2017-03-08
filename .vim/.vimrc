@@ -142,7 +142,7 @@ set backspace=indent,eol,start
 set whichwrap=b,s,<,>,[,]
 
 "Rand für Umbruch
-set colorcolumn=81
+"set colorcolumn=81
 
 "Passende Klammer anzeigen
 set showmatch
@@ -331,7 +331,8 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 "Space toggles folds
-nnoremap <Space> za
+"Breaks Ctrl+F and PgDwn
+"nnoremap <Space> za
 
 "Move lines up and down
 noremap <Leader>j ddp
@@ -348,6 +349,11 @@ noremap <leader>n :nohl<CR>
 "Tabs wechseln
 noremap <Leader>, gT
 noremap <Leader>. gt
+
+"Manpages
+runtime! ftplugin/man.vim
+let g:ft_man_open_mode = 'vert'
+set keywordprg=:Man
 
 "}}}
 
