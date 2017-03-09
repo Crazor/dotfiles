@@ -32,9 +32,13 @@ fi
 
 export PAGER=vimpager
 
-# Seems to be buggy with brew cask:
-#export EDITOR="mvim -f --nomru -c 'au VimLeave * !open -a iTerm'"
-export EDITOR=mvim
+if [ "`uname`" = "Darwin" ]; then
+	# Seems to be buggy with brew cask:
+	#export EDITOR="mvim -f --nomru -c 'au VimLeave * !open -a iTerm'"
+	export EDITOR=mvim
+else
+	export EDITOR=vim
+fi
 
 source $ZDOTDIR/zshenv.local
 source $ZDOTDIR/promptline.zsh
