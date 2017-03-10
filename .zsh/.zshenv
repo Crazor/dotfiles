@@ -26,12 +26,6 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ]; 
 	update_terminal_cwd
 fi
 
-#if [[ "`which most`" != "most not found" ]]; then
-#	export PAGER=most
-#fi
-
-export PAGER=vimpager
-
 if [ "`uname`" = "Darwin" ]; then
 	# Seems to be buggy with brew cask:
 	#export EDITOR="mvim -f --nomru -c 'au VimLeave * !open -a iTerm'"
@@ -39,6 +33,13 @@ if [ "`uname`" = "Darwin" ]; then
 else
 	export EDITOR=vim
 fi
+
+# Most does colorful manpages, among others
+export PAGER=most
+
+# Note that setting $EDITOR to vim also causes zsh to use vi-like keymaps
+# This will switch back to emacs bindings:
+bindkey -e
 
 source $ZDOTDIR/zshenv.local
 source $ZDOTDIR/promptline.zsh
