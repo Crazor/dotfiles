@@ -37,7 +37,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
-Plugin 'valloric/YouCompleteMe'
+"Plugin 'valloric/YouCompleteMe'
 "let g:ycm_server_use_vim_stdout = 1
 "let g:ycm_server_log_level = 'debug'
 Plugin 'kien/ctrlp.vim'
@@ -55,6 +55,9 @@ Plugin 'edkolev/tmuxline.vim'
 let g:airline#extensions#tmuxline#enabled = 1
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'keith/tmux.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 "let g:solarized_termtrans=1
 
