@@ -58,6 +58,7 @@ Plugin 'keith/tmux.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "<c-n>"
+Plugin 'christoomey/vim-tmux-navigator'
 
 "let g:solarized_termtrans=1
 
