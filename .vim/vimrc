@@ -10,69 +10,70 @@ call vundle#rc()
 "}}}
 
 "Plugins {{{
-Plugin 'gmarik/vundle'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'msanders/cocoa.vim'
-Plugin 'Match-Bracket-for-Objective-C'
-Plugin 'VHDL-indent-93-syntax'
 Plugin 'DoxygenToolkit.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'ZoomWin'
-Plugin 'camelcasemotion'
-Plugin 'majutsushi/tagbar'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
-Plugin 'YankRing.vim'
-Plugin 'derekwyatt/vim-protodef'
-Plugin 'derekwyatt/vim-fswitch'
-Plugin 'VisIncr'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-abolish'
-"Plugin 'sjl/gundo.vim'
-Plugin 'mbbill/undotree'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'altercation/vim-colors-solarized'
-"Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'rizzatti/funcoo.vim'
-Plugin 'rizzatti/dash.vim'
-"Plugin 'valloric/YouCompleteMe'
-"let g:ycm_server_use_vim_stdout = 1
-"let g:ycm_server_log_level = 'debug'
-Plugin 'kien/ctrlp.vim'
+Plugin 'Match-Bracket-for-Objective-C'
 Plugin 'Raimondi/delimitMate'
-Plugin 'Valloric/ListToggle'
-Plugin 'xu-cheng/brew.vim'
-Plugin 'joonty/vdebug'
 Plugin 'ReplaceWithRegister'
-Plugin 'vim-airline/vim-airline'
-let g:airline_powerline_fonts = 1
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'edkolev/promptline.vim'
-let g:airline#extensions#tabline#enabled = 1
-Plugin 'edkolev/tmuxline.vim'
-let g:airline#extensions#tmuxline#enabled = 1
+Plugin 'VHDL-indent-93-syntax'
+Plugin 'Valloric/ListToggle'
+Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'VisIncr'
+Plugin 'YankRing.vim'
+Plugin 'ZoomWin'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'camelcasemotion'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'derekwyatt/vim-fswitch'
+Plugin 'gmarik/vundle'
+Plugin 'joonty/vdebug'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'mbbill/undotree'
+Plugin 'msanders/cocoa.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'tmux-plugins/vim-tmux'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
+Plugin 'xu-cheng/brew.vim'
+
+Plugin 'derekwyatt/vim-protodef'
+	let protodefprotogetter=$VIM.'bundles/protodef/pullproto.pl'
+	let disable_protodef_sorting=1
+
 Plugin 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = "<c-n>"
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'Vimjas/vim-python-pep8-indent'
+	let g:SuperTabDefaultCompletionType = "<c-n>"
+
 Plugin 'haya14busa/incsearch.vim'
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+	map /  <Plug>(incsearch-forward)
+	map ?  <Plug>(incsearch-backward)
+	map g/ <Plug>(incsearch-stay)
 
-"let g:solarized_termtrans=1
+Plugin 'vim-airline/vim-airline'
+	let g:airline_powerline_fonts = 1
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'edkolev/promptline.vim'
+	let g:airline#extensions#tabline#enabled = 1
+Plugin 'edkolev/tmuxline.vim'
+	let g:airline#extensions#tmuxline#enabled = 1
 
-syntax enable
-set background=light
-"let g:solarized_termcolors=256
-colorscheme solarized
-set cursorline
+"Colorscheme
+Plugin 'altercation/vim-colors-solarized'
+	"let g:solarized_termtrans=1
+	syntax enable
+	set background=light
+	"let g:solarized_termcolors=256
+	colorscheme solarized
+	set cursorline
 "}}}
 
 "Grundlegende Konfiguration {{{
@@ -247,7 +248,7 @@ augroup END
 
 function! HelpInNewTab()
 	if &buftype == 'help'
-		execute "normal \<C-W>T"
+		silent execute "normal \<C-W>T"
 	endif
 endfunction
 "}}}
@@ -308,9 +309,6 @@ endfunction
 "Wer braucht schon den Ex-Mode?
 noremap Q gq
 
-"xptemplates mappings
-let g:xptemplate_key = '<C-Tab>'
-
 "Synctex
 noremap <Leader>r :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<.pdf %<CR>
 
@@ -364,16 +362,5 @@ noremap <Leader>. gt
 runtime! ftplugin/man.vim
 let g:ft_man_open_mode = 'vert'
 set keywordprg=:Man
-
-"}}}
-
-"Plugins {{{
-
-"Keine Klammervervollständigung
-let xptemplate_brace_complete=0
-
-"Protodef-Einstellungen
-let protodefprotogetter=$VIM.'bundles/protodef/pullproto.pl'
-let disable_protodef_sorting=1
 
 "}}}
