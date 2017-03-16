@@ -30,7 +30,8 @@ Plugin 'VisIncr'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-abolish'
-Plugin 'sjl/gundo.vim'
+"Plugin 'sjl/gundo.vim'
+Plugin 'mbbill/undotree'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'altercation/vim-colors-solarized'
 "Plugin 'jistr/vim-nerdtree-tabs'
@@ -54,7 +55,7 @@ let g:airline#extensions#tabline#enabled = 1
 Plugin 'edkolev/tmuxline.vim'
 let g:airline#extensions#tmuxline#enabled = 1
 Plugin 'skywind3000/asyncrun.vim'
-Plugin 'keith/tmux.vim'
+Plugin 'tmux-plugins/vim-tmux'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "<c-n>"
