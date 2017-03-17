@@ -318,7 +318,7 @@ cnoremap $d e ~/Desktop/
 cnoremap $$ e ./
 
 "Als root schreiben
-cnoremap w!! %!sudo tee % > /dev/null
+cnoremap w!! % !sudo tee % > /dev/null
 
 "Bracketed paste mode Unterstützung
 if &term =~ "xterm.*"
