@@ -10,41 +10,43 @@ call vundle#rc()
 "}}}
 
 "Plugins {{{
-Plugin 'DoxygenToolkit.vim'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'Match-Bracket-for-Objective-C'
-Plugin 'Raimondi/delimitMate'
-Plugin 'ReplaceWithRegister'
-Plugin 'VHDL-indent-93-syntax'
-Plugin 'Valloric/ListToggle'
-Plugin 'Vimjas/vim-python-pep8-indent'
-Plugin 'VisIncr'
-Plugin 'YankRing.vim'
-Plugin 'ZoomWin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'camelcasemotion'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'derekwyatt/vim-fswitch'
+Plugin 'DoxygenToolkit.vim'
 Plugin 'gmarik/vundle'
 Plugin 'joonty/vdebug'
 Plugin 'kien/ctrlp.vim'
+Plugin 'Lokaltog/vim-easymotion'
 Plugin 'majutsushi/tagbar'
+Plugin 'Match-Bracket-for-Objective-C'
 Plugin 'mbbill/undotree'
 Plugin 'msanders/cocoa.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'ReplaceWithRegister'
 Plugin 'rizzatti/dash.vim'
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+"Plugin 'ShowMarks'
 Plugin 'skywind3000/asyncrun.vim'
+Plugin 'tmhedberg/SimpylFold'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'Valloric/ListToggle'
+Plugin 'VHDL-indent-93-syntax'
+Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'VisIncr'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'xu-cheng/brew.vim'
+Plugin 'YankRing.vim'
+Plugin 'ZoomWin'
 
 Plugin 'derekwyatt/vim-protodef'
 	let protodefprotogetter=$VIM.'bundles/protodef/pullproto.pl'
@@ -241,16 +243,20 @@ endfunction
 nnoremap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
 
 "Hilfe in Tab öffnen
-augroup HelpInTabs
-	autocmd!
-	autocmd BufEnter *.txt call HelpInNewTab()
-augroup END
+"augroup HelpInTabs
+"    autocmd!
+"    autocmd BufEnter *.txt call HelpInNewTab()
+"augroup END
 
 function! HelpInNewTab()
 	if &buftype == 'help'
 		silent execute "normal \<C-W>T"
 	endif
 endfunction
+
+" Suchtreffer immer in die Bildschirmmitte
+nnoremap n nzz
+
 "}}}
 
 "MacVim {{{
@@ -346,8 +352,8 @@ noremap <Right> <NOP>
 noremap <Leader>j ddp
 noremap <Leader>k ddkP
 
-"Kill highlights, not needed with incsearch.vim
-"noremap <leader>n :nohl<CR>
+"Kill highlights
+noremap <leader>h :nohl<CR>
 
 ""Uppercase word
 "inoremap <C-u> <Esc>viwgUea
