@@ -25,6 +25,7 @@ Plugin 'Konfekt/FastFold'
 Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'majutsushi/tagbar'
 Plugin 'Match-Bracket-for-Objective-C'
+Plugin 'mattboehm/vim-accordion'
 Plugin 'mbbill/undotree'
 Plugin 'mileszs/ack.vim'
 Plugin 'msanders/cocoa.vim'
@@ -52,6 +53,9 @@ Plugin 'xolox/vim-misc'
 Plugin 'xu-cheng/brew.vim'
 Plugin 'YankRing.vim'
 Plugin 'ZoomWin'
+
+Plugin 'mattboehm/vim-unstack'
+    let g:unstack_layout = "portrait"
 
 Plugin 'derekwyatt/vim-protodef'
 	let protodefprotogetter=$VIM.'bundles/protodef/pullproto.pl'
