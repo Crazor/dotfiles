@@ -224,6 +224,8 @@ let g:netrw_liststyle=3 "Tree style listing
 "Vimpager
 "let g:vimpager.passthrough=0
 
+"Leader
+let mapleader = ","
 "}}}
 
 "Autocommands {{{
@@ -301,8 +303,6 @@ endfunction
 
 "Mappings {{{
 
-"Leader
-let mapleader = ","
 "fswitch mappings
 nnoremap <silent> <Leader>of :FSHere<cr>
 nnoremap <silent> <Leader>ol :FSRight<cr>
