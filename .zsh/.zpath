@@ -32,3 +32,6 @@ if [[ -d ~/bin ]]; then
 	path=(~/bin $path)
 fi
 
+if [[ -d /opt/microchip/xc32/v1.43/bin ]]; then
+	path=($path /opt/microchip/xc32/v1.43/bin)
+fi
