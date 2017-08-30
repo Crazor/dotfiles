@@ -233,6 +233,9 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
+"Splits neu aufteilen bei Änderung der Fenstergröße
+autocmd VimResized * execute "normal! \<C-w>="
+
 "Omnicompletion
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -369,6 +372,10 @@ noremap <Right> <NOP>
 "Breaks Ctrl+F and PgDwn
 "nnoremap <Space> za
 
+"Be very magic by default
+nnoremap / /\v
+vnoremap / /\v
+
 "Move lines up and down
 noremap <Leader>j ddp
 noremap <Leader>k ddkP
@@ -389,5 +396,9 @@ noremap <Leader>. gt
 runtime! ftplugin/man.vim
 let g:ft_man_open_mode = 'vert'
 set keywordprg=:Man
+
+"""Command mode
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
 
 "}}}
