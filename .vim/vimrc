@@ -61,6 +61,10 @@ Plugin 'Valloric/ListToggle'
 Plugin 'VHDL-indent-93-syntax'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'VisIncr'
+Plugin 'wincent/ferret'
+Plugin 'wincent/loupe'
+Plugin 'wincent/scalpel'
+Plugin 'wincent/terminus'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'xu-cheng/brew.vim'
@@ -68,41 +72,53 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'YankRing.vim'
 Plugin 'ZoomWin'
 
+Plugin 'derekwyatt/vim-fswitch'
+nnoremap <silent> <Leader>of :FSHere<cr>
+nnoremap <silent> <Leader>ol :FSRight<cr>
+nnoremap <silent> <Leader>oL :FSSplitRight<cr>
+nnoremap <silent> <Leader>oh :FSLeft<cr>
+nnoremap <silent> <Leader>oH :FSSplitLeft<cr>
+nnoremap <silent> <Leader>ok :FSAbove<cr>
+nnoremap <silent> <Leader>oK :FSSplitAbove<cr>
+nnoremap <silent> <Leader>oj :FSBelow<cr>
+nnoremap <silent> <Leader>oJ :FSSplitBelow<cr>
+
 Plugin 'mattboehm/vim-unstack'
-	let g:unstack_layout = "portrait"
+let g:unstack_layout = "portrait"
 
 Plugin 'derekwyatt/vim-protodef'
-	let protodefprotogetter=$VIM.'bundles/protodef/pullproto.pl'
-	let disable_protodef_sorting=1
+let protodefprotogetter=$VIM.'bundles/protodef/pullproto.pl'
+let disable_protodef_sorting=1
 
-Plugin 'ervandew/supertab'
-	let g:SuperTabDefaultCompletionType = "<c-n>"
+"Plugin 'ervandew/supertab'
+"	let g:SuperTabDefaultCompletionType = "<c-n>"
 
 Plugin 'haya14busa/incsearch.vim'
-	map /  <Plug>(incsearch-forward)
-	map ?  <Plug>(incsearch-backward)
-	map g/ <Plug>(incsearch-stay)
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 Plugin 'vim-airline/vim-airline'
-	let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'edkolev/promptline.vim'
-	let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 Plugin 'edkolev/tmuxline.vim'
-	let g:airline#extensions#tmuxline#enabled = 1
+let g:airline#extensions#tmuxline#enabled = 1
 
 Plugin 'vimwiki/vimwiki'
-	let g:vimwiki_list = 	[{'path': '~/vimwiki/certus', 'path_html': '~/mnt/fileserver/IT/Dokumentation/', 'auto_export': 1, 'auto_toc': 1, 'maxhi': 1 },
-							\{'path': '~/vimwiki/crazor', 'maxhi': 1 }]
+let g:vimwiki_list = 	[{'path': '~/vimwiki/certus', 'path_html': '~/mnt/fileserver/IT/Dokumentation/', 'auto_export': 1, 'auto_toc': 1, 'maxhi': 1 },
+						\{'path': '~/vimwiki/crazor', 'maxhi': 1 }]
 
 "Colorscheme
 Plugin 'altercation/vim-colors-solarized'
-	"let g:solarized_termtrans=1
-	syntax enable
-	set background=light
-	"let g:solarized_termcolors=256
-	colorscheme solarized
-	set cursorline
+set termguicolors
+"let g:solarized_termtrans=1
+syntax enable
+set background=light
+"let g:solarized_termcolors=256
+colorscheme solarized
+set cursorline
 "}}}
 
 "Grundlegende Konfiguration {{{
@@ -115,9 +131,7 @@ set visualbell t_vb=
 "Deutsch =)
 set helplang=de
 
-"Maus immer an
-set mouse=a
-
+"Verzeichnis für viminfo
 set viminfo+=!
 set viminfo+=n~/.vim/.viminfo
 
@@ -140,12 +154,12 @@ set history=100
 set splitright
 set splitbelow
 
+"Durchgehender Strich zwischen Splits
+set fillchars=vert:┃
+
 "minimale Fenstergröße
 set winminheight=0
 set winminwidth=0
-
-"Änderungen automatisch einlesen
-set autoread
 
 "Änderungen an .vimrc beim Speichern übernehmen
 augroup reload_vimrc
@@ -187,6 +201,9 @@ set whichwrap=b,s,<,>,[,]
 "Passende Klammer anzeigen
 set showmatch
 
+"Buffer in anderen Tabs wiederverwenden
+set switchbuf=usetab
+
 "Letzte Zeile möglichst vollständig anzeigen
 set display=lastline
 
@@ -213,8 +230,14 @@ set hlsearch
 "J ein wenig Benehmen beibringen
 set nojoinspaces
 
+"Kommentarzeichen beim Join entfernen
+set formatoptions+=j
+
 "Immer Statuszeile anzeigen
 set laststatus=2
+
+"Macros beschleunigen
+set lazyredraw
 
 "System-Zwischenablage verwenden
 set clipboard=unnamed
@@ -326,6 +349,7 @@ nnoremap <silent> <Leader>oK :FSSplitAbove<cr>
 nnoremap <silent> <Leader>oj :FSBelow<cr>
 nnoremap <silent> <Leader>oJ :FSSplitBelow<cr>
 
+"LaTeX Umlaute
 function! Texmap()
 	inoremap ö "o
 	inoremap ä "a
@@ -384,21 +408,9 @@ noremap <Right> <NOP>
 "Breaks Ctrl+F and PgDwn
 "nnoremap <Space> za
 
-"Be very magic by default
-nnoremap / /\v
-vnoremap / /\v
-
 "Move lines up and down
 noremap <Leader>j ddp
 noremap <Leader>k ddkP
-
-"Kill highlights
-noremap <leader>h :nohl<CR>
-
-""Uppercase word
-"inoremap <C-u> <Esc>viwgUea
-""Lowercase word
-"inoremap <C-l> <Esc>viwguea
 
 "Tabs wechseln
 noremap <Leader>, gT
