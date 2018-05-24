@@ -26,13 +26,7 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ]; 
 	update_terminal_cwd
 fi
 
-if [ "`uname`" = "Darwin" ]; then
-	# Seems to be buggy with brew cask:
-	#export EDITOR="mvim -f --nomru -c 'au VimLeave * !open -a iTerm'"
-	export EDITOR=mvim
-else
-	export EDITOR=vim
-fi
+export EDITOR=vim
 
 # Most does colorful manpages, among others
 export PAGER=most
