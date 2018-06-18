@@ -13,7 +13,7 @@ call vundle#rc()
 Plugin 'airblade/vim-gitgutter'
 Plugin 'camelcasemotion'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'gmarik/vundle'
@@ -27,6 +27,7 @@ Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'majutsushi/tagbar'
 Plugin 'Match-Bracket-for-Objective-C'
 Plugin 'mattboehm/vim-accordion'
+Plugin 'maralla/completor.vim'
 Plugin 'mbbill/undotree'
 Plugin 'mileszs/ack.vim'
 Plugin 'msanders/cocoa.vim'
@@ -39,6 +40,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'sheerun/vim-polyglot'
 "Plugin 'ShowMarks'
 Plugin 'skywind3000/asyncrun.vim'
+Plugin 'sukima/xmledit'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tommcdo/vim-lion'
@@ -57,7 +59,6 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'Valloric/ListToggle'
 Plugin 'VHDL-indent-93-syntax'
 Plugin 'Vimjas/vim-python-pep8-indent'
-Plugin 'vimwiki/vimwiki'
 Plugin 'VisIncr'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
@@ -67,7 +68,7 @@ Plugin 'YankRing.vim'
 Plugin 'ZoomWin'
 
 Plugin 'mattboehm/vim-unstack'
-    let g:unstack_layout = "portrait"
+	let g:unstack_layout = "portrait"
 
 Plugin 'derekwyatt/vim-protodef'
 	let protodefprotogetter=$VIM.'bundles/protodef/pullproto.pl'
@@ -88,6 +89,10 @@ Plugin 'edkolev/promptline.vim'
 	let g:airline#extensions#tabline#enabled = 1
 Plugin 'edkolev/tmuxline.vim'
 	let g:airline#extensions#tmuxline#enabled = 1
+
+Plugin 'vimwiki/vimwiki'
+	let g:vimwiki_list = 	[{'path': '~/vimwiki/certus', 'path_html': '~/mnt/fileserver/IT/Dokumentation/', 'auto_export': 1, 'auto_toc': 1, 'maxhi': 1 },
+							\{'path': '~/vimwiki/crazor', 'maxhi': 1 }]
 
 "Colorscheme
 Plugin 'altercation/vim-colors-solarized'
@@ -256,15 +261,15 @@ autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
 highlight EOLWS ctermbg=red guibg=red
 
 function! <SID>StripTrailingWhitespace()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
+	" Preparation: save last search, and cursor position.
+	let _s=@/
+	let l = line(".")
+	let c = col(".")
+	" Do the business:
+	%s/\s\+$//e
+	" Clean up: restore previous search history, and cursor position
+	let @/=_s
+	call cursor(l, c)
 endfunction
 nnoremap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
 
@@ -351,17 +356,17 @@ cnoremap $$ e ./
 cnoremap w!! % !sudo tee % > /dev/null
 
 "Bracketed paste mode Unterstützung
-if &term =~ "xterm.*"
-    let &t_ti = &t_ti . "\e[?2004h"
-    let &t_te = "\e[?2004l" . &t_te
-    function! XTermPasteBegin(ret)
-        set pastetoggle=<Esc>[201~
-        set paste
-        return a:ret
-    endfunction
-    noremap <expr> <Esc>[200~ XTermPasteBegin("i")
-    inoremap <expr> <Esc>[200~ XTermPasteBegin("")
-endif
+"if &term =~ "xterm.*"
+"    let &t_ti = &t_ti . "\e[?2004h"
+"    let &t_te = "\e[?2004l" . &t_te
+"    function! XTermPasteBegin(ret)
+"        set pastetoggle=<Esc>[201~
+"        set paste
+"        return a:ret
+"    endfunction
+"    noremap <expr> <Esc>[200~ XTermPasteBegin("i")
+"    inoremap <expr> <Esc>[200~ XTermPasteBegin("")
+"endif
 
 noremap <Up> <C-y>
 noremap <Down> <C-e>
@@ -400,5 +405,8 @@ set keywordprg=:Man
 """Command mode
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
+
+"Insert at begining of last insertion
+nnoremap <Leader>i `[i
 
 "}}}
