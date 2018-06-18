@@ -1,10 +1,6 @@
 # Make ZSH read its files from ~/.zsh
 
 ZDOTDIR=.zsh
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=~/.history
-
 # Load colors array
 autoload -U colors
 colors
@@ -70,11 +66,41 @@ setopt PROMPT_SUBST
 # Don't print error messages when some globs don't match, but error when all don't.
 setopt CSH_NULL_GLOB
 
+### History settings
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.history
+
 # Print the command with expanded history before execution
 setopt HIST_VERIFY
 
 # Append to history file after each command is executed
 setopt INC_APPEND_HISTORY
+
+# Share history between instances
+setopt SHARE_HISTORY
+
+# Shared history with local up/down-arrow browsing
+bindkey "${key[Up]}" up-line-or-local-history
+bindkey "${key[Down]}" down-line-or-local-history
+
+up-line-or-local-history() {
+	zle set-local-history 1
+	zle up-line-or-history
+	zle set-local-history 0
+}
+zle -N up-line-or-local-history
+
+down-line-or-local-history() {
+	zle set-local-history 1
+	zle down-line-or-history
+	zle set-local-history 0
+}
+zle -N down-line-or-local-history
+
+# Browse global history
+bindkey "[1;5A]" up-line-or-history # Ctrl + cursor up
+bindkey "[1;5B]" down-line-or-history # Ctrl + cursor down
 
 # Save more information about commands in the history file
 setopt EXTENDED_HISTORY
@@ -112,10 +138,6 @@ setopt PUSHD_TO_HOME
 # Notify immediately about background job status changes
 setopt NOTIFY
 
-# Init new completion system
-autoload -U compinit
-compinit
-
 # Load menu selection support
 zmodload -i zsh/complist
 
@@ -151,8 +173,11 @@ if [[ -r ~/.zsh/.aliasrc ]]; then
 	source ~/.zsh/.aliasrc
 fi
 
-fpath=($HOME/.zsh/func $fpath)
+# Init new completion system
+fpath=($HOME/.zsh/func $HOME/.zsh/completion/docker-machine $fpath)
 typeset -U fpath
+autoload -U compinit
+compinit
 
 [[ -s "/Users/crazor/.rvm/scripts/rvm" ]] && source "/Users/crazor/.rvm/scripts/rvm"
 
