@@ -41,6 +41,7 @@ Plugin 'sheerun/vim-polyglot'
 "Plugin 'ShowMarks'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'sukima/xmledit'
+Plugin 'tcd.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tommcdo/vim-lion'
@@ -55,7 +56,7 @@ Plugin 'tpope/vim-rsi'
 "Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-vinegar'
+"Plugin 'tpope/vim-vinegar'
 Plugin 'Valloric/ListToggle'
 Plugin 'VHDL-indent-93-syntax'
 Plugin 'Vimjas/vim-python-pep8-indent'
@@ -275,7 +276,7 @@ nnoremap <silent> <Leader><space> :call <SID>StripTrailingWhitespace()<CR>
 
 "Hilfe in Tab öffnen
 "augroup HelpInTabs
-"    autocmd!
+	"    autocmd!
 "    autocmd BufEnter *.txt call HelpInNewTab()
 "augroup END
 
@@ -307,6 +308,12 @@ endfunction
 "}}}
 
 "Mappings {{{
+
+"Leader
+let mapleader = ","
+
+"Write all
+nnoremap <Leader>w :wa<cr>
 
 "fswitch mappings
 nnoremap <silent> <Leader>of :FSHere<cr>
