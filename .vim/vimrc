@@ -14,7 +14,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'camelcasemotion'
 Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'davidhalter/jedi-vim'
-Plugin 'derekwyatt/vim-fswitch'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'gmarik/vundle'
 Plugin 'godlygeek/tabular'
@@ -102,8 +101,10 @@ map g/ <Plug>(incsearch-stay)
 Plugin 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 1
 Plugin 'vim-airline/vim-airline-themes'
+
 Plugin 'edkolev/promptline.vim'
 let g:airline#extensions#tabline#enabled = 1
+
 Plugin 'edkolev/tmuxline.vim'
 let g:airline#extensions#tmuxline#enabled = 1
 
