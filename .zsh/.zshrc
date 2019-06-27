@@ -147,6 +147,11 @@ zstyle ':completion:*' menu select=1
 # Make ^o drill down menu selections
 bindkey -M menuselect '^o' accept-and-infer-next-history
 
+# Edit command line in editor
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^x' edit-command-line
+
 # Complete inside words
 setopt COMPLETE_IN_WORD
 
