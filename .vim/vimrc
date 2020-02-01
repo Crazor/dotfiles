@@ -85,14 +85,6 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-Plug 'vim-airline/vim-airline'
-let g:airline_powerline_fonts = 1
-Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/promptline.vim'
-let g:airline#extensions#tabline#enabled = 1
-Plug 'edkolev/tmuxline.vim'
-let g:airline#extensions#tmuxline#enabled = 1
-
 Plug 'vimwiki/vimwiki'
 let g:vimwiki_list = 	[{'path': '~/vimwiki/certus', 'path_html': '~/mnt/fileserver/IT/Dokumentation/', 'auto_export': 1, 'auto_toc': 1, 'maxhi': 1 },
 						\{'path': '~/vimwiki/crazor', 'maxhi': 1 }]
@@ -108,16 +100,28 @@ let g:pymode_rope_completion = 1
 let g:pymode_rope_complete_on_dot = 1
 let g:pymode_rope_completion_bind = '<C-Space>'
 
+"Plug 'altercation/vim-colors-solarized'
+"set termguicolors
+""let g:solarized_termtrans=1
+"set background=light
+""let g:solarized_termcolors=256
+
+"Airline/Promptline/Tmuxline
+Plug 'vim-airline/vim-airline'
+let g:airline_powerline_fonts = 1
+"Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/promptline.vim'
+let g:airline#extensions#tabline#enabled = 1
+Plug 'edkolev/tmuxline.vim'
+let g:airline#extensions#tmuxline#enabled = 1
+let g:airline_theme = 'codedark'
+
 "Colorscheme
-Plug 'altercation/vim-colors-solarized'
-set termguicolors
-"let g:solarized_termtrans=1
-set background=light
-"let g:solarized_termcolors=256
+Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 
-colorscheme solarized
+colorscheme codedark
 set cursorline
 "}}}
 
