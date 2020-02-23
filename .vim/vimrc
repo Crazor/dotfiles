@@ -20,15 +20,17 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'gmarik/vundle'
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/gitv'
+Plug 'jason0x43/vim-wildgitignore'
 Plug 'joonty/vdebug'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-plug'
+Plug 'kballard/vim-swift'
 Plug 'kien/ctrlp.vim'
 Plug 'Konfekt/FastFold'
 Plug 'lervag/vimtex'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'ludovicchabant/vim-gutentags'
-"Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/Match-Bracket-for-Objective-C'
 Plug 'mattboehm/vim-accordion'
 "Plug 'maralla/completor.vim'
@@ -46,7 +48,7 @@ Plug 'sheerun/vim-polyglot'
 "Plug 'ShowMarks'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'sukima/xmledit'
-	Plug 'vim-scripts/tcd.vim'
+Plug 'vim-scripts/tcd.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tommcdo/vim-lion'
@@ -90,8 +92,7 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 Plug 'vimwiki/vimwiki'
-let g:vimwiki_list = 	[{'path': '~/vimwiki/certus', 'path_html': '~/mnt/fileserver/IT/Dokumentation/', 'auto_export': 1, 'auto_toc': 1, 'maxhi': 1 },
-						\{'path': '~/vimwiki/crazor', 'maxhi': 1 }]
+let g:vimwiki_list = 	[{'path': '~/vimwiki/crazor', 'maxhi': 1 }]
 
 "Python mode
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
@@ -115,6 +116,22 @@ let g:airline#extensions#tabline#enabled = 1
 Plug 'edkolev/tmuxline.vim'
 let g:airline#extensions#tmuxline#enabled = 1
 let g:airline_theme = 'codedark'
+
+"Syntastic
+Plug 'vim-syntastic/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_aggretage_errors = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
+"Rust
+Plug 'rust-lang/rust.vim'
+let g:rust_fold = 1
+let g:rustfmt_autosave = 1
 
 "Colorscheme
 Plug 'tomasiser/vim-code-dark'
@@ -145,6 +162,9 @@ syntax enable
 
 "Wildmenu (Vervollständigung)
 set wildmenu
+
+"Suche in Unterverzeichnissen
+set path+=**
 
 "Unvollständige Kommandos anzeigen
 set showcmd
@@ -427,5 +447,8 @@ nnoremap <Leader>i `[i
 "Easier visual indentation
 vnoremap < <gv 
 vnoremap > >gv
+
+"Semicolon at end of line
+inoremap ;; <C-o>A;
 
 "}}}
