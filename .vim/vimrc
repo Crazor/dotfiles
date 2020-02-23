@@ -11,7 +11,10 @@ call plug#begin('~/.vim/plugged')
 "Plugins {{{
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/camelcasemotion'
+
 Plug 'christoomey/vim-tmux-navigator'
+let g:tmux_navigator_save_on_switch = 3
+
 "Plug 'davidhalter/jedi-vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'gmarik/vundle'
