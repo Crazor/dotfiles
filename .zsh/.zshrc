@@ -81,8 +81,8 @@ setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
 # Shared history with local up/down-arrow browsing
-bindkey "${key[Up]}" up-line-or-local-history
-bindkey "${key[Down]}" down-line-or-local-history
+#bindkey "${key[Up]}" up-line-or-local-history
+#bindkey "${key[Down]}" down-line-or-local-history
 
 up-line-or-local-history() {
 	zle set-local-history 1
