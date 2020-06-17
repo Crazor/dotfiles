@@ -43,3 +43,7 @@ fi
 if [[ -d ~/.cargo/bin ]]; then
 	path=(~/.cargo/bin $path)
 fi
+
+if [[ -d ~/.local/bin ]]; then
+	path=(~/.local/bin $path)
+fi
