@@ -20,6 +20,9 @@ fi
 alias grep="grep --color=auto"
 
 alias ls="ls -h"
+alias ll="ls -la"
+alias la="ls -a"
+
 if [[ "`uname`" == "Linux" ]]; then
 	alias ls="ls --color=auto -h"
 fi
@@ -38,3 +41,13 @@ alias psgrep="psgrep -a -i -o pid,state,user,command"
 alias less=vimpager
 alias zless=vimpager
 alias git=hub
+
+alias g="git"
+alias ga="git add"
+alias gco="git checkout"
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias gs="git status"
+alias gst="git st"
+alias gc="git commit"
+alias gcm="git commit -m"
