@@ -27,9 +27,7 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ] || [ "$TERM_PROGRAM" = "iTerm.app" ]; 
 fi
 
 export EDITOR=vim
-
-# Most does colorful manpages, among others
-export PAGER=most
+export PAGER=vimpager
 
 # Note that setting $EDITOR to vim also causes zsh to use vi-like keymaps
 # This will switch back to emacs bindings:
