@@ -44,10 +44,11 @@ alias git=hub
 
 alias g="git"
 alias ga="git add"
+alias gc="git commit"
 alias gco="git checkout"
+alias gcm="git commit -m"
 alias gd="git diff"
 alias gdc="git diff --cached"
+alias gl="git log"
 alias gs="git status"
 alias gst="git st"
-alias gc="git commit"
-alias gcm="git commit -m"
