@@ -1,9 +1,3 @@
-[github]
-	user = Crazor
-	#token = 
-[user]
-	name = Crazor
-	email = crazor@gmail.com
 [advice]
 	statusHints = false
 [color]
@@ -58,7 +52,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [branch]
 	autosetuprebase = always
