@@ -24,6 +24,7 @@ Plug 'jason0x43/vim-wildgitignore'
 Plug 'joonty/vdebug'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-plug'
+Plug 'justinmk/vim-sneak'
 Plug 'kballard/vim-swift'
 Plug 'kien/ctrlp.vim'
 Plug 'Konfekt/FastFold'
@@ -34,11 +35,13 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/Match-Bracket-for-Objective-C'
 Plug 'mattboehm/vim-accordion'
 "Plug 'maralla/completor.vim'
+Plug 'markonm/traces.vim'
 Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
 Plug 'msanders/cocoa.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'rbong/vim-flog'
 Plug 'rickhowe/diffchar.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'rizzatti/funcoo.vim'
@@ -451,4 +454,8 @@ vnoremap > >gv
 "Semicolon at end of line
 inoremap ;; <C-o>A;
 
+tmap <C-h> <C-W><C-h>
+tmap <C-j> <C-W><C-j>
+tmap <C-k> <C-W><C-k>
+tmap <C-l> <C-W><C-l>
 "}}}
