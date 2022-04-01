@@ -52,3 +52,7 @@ alias gdc="git diff --cached"
 alias gl="git log --pretty=oneline --abbrev-commit"
 alias gs="git status"
 alias gst="git st"
+
+if [[ -z `whence code` && -n `whence codium` ]]; then
+	alias code=codium
+fi
